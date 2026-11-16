@@ -13,8 +13,14 @@ config.initial_rows = 28
 
 -- or, changing the font size and color scheme.
 config.font_size = 10
-config.color_scheme = 'Galizur'
-config.font = wezterm.font 'JetBrains Mono'
+config.color_scheme = '3024 Night'
+config.font = wezterm.font_with_fallback {
+    '0xProto Nerd Font Mono',
+    'Jetbrains Mono',
+}
+
+-- Set default shell to legacy Windows PowerShell
+config.default_prog = { 'powershell.exe', '-NoLogo' }
 
 -- Finally, return the configuration to wezterm:
 return config
